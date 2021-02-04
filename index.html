@@ -13,12 +13,15 @@
 
 <body>
 	<div class="container" id="target">
+        <!-- colored prompt in top-left corner of screen -->
 		<div class="row col-md-12" id="prompt-container">
 			<div class="row col-xs-12" id="yellow-block"></div>
 			<div class="row col-lg-12" id="sentence"></div>
 			<div class="row col-lg-12 text-center" id="feedback"></div>
 			<div class="row col-lg-12 text-center" id="target-letter"></div>
-		</div>
+        </div>
+        
+        <!-- UPPER CASE LETTERS -->
 		<div class="text-center keyboard-container" id="keyboard-upper-container">
 			<div class="row col-lg-12 keys-row">
 				<span class="well well-lg key" id="126">~</span>
@@ -75,7 +78,9 @@
 				<span class="well well-lg key" id="62">&#62</span>
 				<span class="well well-lg key" id="63">?</span>
 			</div>
-		</div>
+        </div>
+        
+        <!-- lower case letters  -->
 		<div class="text-center keyboard-container" id="keyboard-lower-container">
 			<div class="row col-lg-12 keys-row">
 				<span class="well well-lg key" id="96">`</span>
@@ -136,6 +141,9 @@
 		<div class="row col-lg-12 text-center keys-row">
 			<div class="well well-lg key" id="32">Space</div>
 		</div>
-	</div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
