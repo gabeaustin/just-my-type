@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $("#keyboard-upper-container").hide();
 });
 
@@ -15,53 +15,54 @@ $(document).keydown(function (e) {
 });
 
 
-$(document).keydown(function(e) {
+$(document).keydown(function (e) {
     // Row 1 - top keys (with shift pressed)
-/*
-    if (e.which == 81) { // ~
-        console.log("~")
-    }
-    if (e.which == 33 && e.which == 16) { // !
-        console.log("!")
-    }
-    if (e.which == 64 && e.which == 16) { // @
-        console.log("@")
-    }
-    if (e.which == 35 && e.which == 16) { // #
-        console.log("#")
-    }
-    if (e.which == 36 && e.which == 16) { // $
-        console.log("$")
-    }
-    if (e.which == 37 && e.which == 16) { // %
-        console.log("%")
-    }
-    if (e.which == 94 && e.which == 16) { // ^
-        console.log("^")
-    }
-    if (e.which == 38 && e.which == 16) { // &
-        console.log("&")
-    }
-    if (e.which == 42 && e.which == 16) { // *
-        console.log("*")
-    }
-    if (e.which == 40 && e.which == 16) { // (
-        console.log("(")
-    }
-    if (e.which == 41 && e.which == 16) { // )
-        console.log(")")
-    }
-    if (e.which == 95 && e.which == 16) { // _
-        console.log("_")
-    }
-    if (e.which == 43 && e.which == 16) { // +
-        console.log("+")
-    }
-*/
+    /*
+        if (e.which == 81) { // ~
+            console.log("~")
+        }
+        if (e.which == 33 && e.which == 16) { // !
+            console.log("!")
+        }
+        if (e.which == 64 && e.which == 16) { // @
+            console.log("@")
+        }
+        if (e.which == 35 && e.which == 16) { // #
+            console.log("#")
+        }
+        if (e.which == 36 && e.which == 16) { // $
+            console.log("$")
+        }
+        if (e.which == 37 && e.which == 16) { // %
+            console.log("%")
+        }
+        if (e.which == 94 && e.which == 16) { // ^
+            console.log("^")
+        }
+        if (e.which == 38 && e.which == 16) { // &
+            console.log("&")
+        }
+        if (e.which == 42 && e.which == 16) { // *
+            console.log("*")
+        }
+        if (e.which == 40 && e.which == 16) { // (
+            console.log("(")
+        }
+        if (e.which == 41 && e.which == 16) { // )
+            console.log(")")
+        }
+        if (e.which == 95 && e.which == 16) { // _
+            console.log("_")
+        }
+        if (e.which == 43 && e.which == 16) { // +
+            console.log("+")
+        }
+    */
 
     // UPPERCASE - row 2
     if (e.which == 81) { // Q
         console.log("Q")
+        $('#81').css('background-color', 'yellow');
     }
     if (e.which == 87) { // W
         console.log("W")
@@ -162,7 +163,7 @@ $(document).keydown(function(e) {
     if (e.which == 63) { // ?
         console.log("?")
     }
-    
+
     // UPPERCASE - row 4
     if (e.which == 90) { // Z
         console.log("Z")
@@ -267,7 +268,116 @@ $(document).keydown(function(e) {
         console.log("=")
     }
 
+    // lowercase - row 2
+    if (e.which === "#113") { // q
+        console.log("q")
+        $("#113").css("background-color", "yellow");
+    }
+    if (e.which == 119) { // w
+        console.log("w")
+    }
+    if (e.which == 101) { // e
+        console.log("e")
+    }
+    if (e.which == 114) { // r
+        console.log("r")
+    }
+    if (e.which == 116) { // t
+        console.log("t")
+    }
+    if (e.which == 121) { // y
+        console.log("y")
+    }
+    if (e.which == 117) { // u
+        console.log("u")
+    }
+    if (e.which == 105) { // i
+        console.log("i")
+    }
+    if (e.which == 111) { // o
+        console.log("o")
+    }
+    if (e.which == 112) { // p
+        console.log("p")
+    }
+    if (e.which == 91) { // [
+        console.log("[")
+    }
+    if (e.which == 93) { // ]
+        console.log("]")
+    }
 
+    // lowercase - row 3
+    if (e.which == 97) { // a
+        console.log("a")
+    }
+    if (e.which == 115) { // s
+        console.log("s")
+    }
+    if (e.which == 100) { // d
+        console.log("d")
+    }
+    if (e.which == 102) { // f
+        console.log("f")
+    }
+    if (e.which == 103) { // g
+        console.log("g")
+    }
+    if (e.which == 104) { // h
+        console.log("h")
+    }
+    if (e.which == 106) { // j
+        console.log("j")
+    }
+    if (e.which == 107) { // k
+        console.log("k")
+    }
+    if (e.which == 108) { // l
+        console.log("l")
+    }
+    if (e.which == 59) { // ;
+        console.log(";")
+    }
+    if (e.which == 39) { // '
+        console.log("'")
+    }
+
+    // lowercase - row 4
+    if (e.which == 122) { // z
+        console.log("z")
+    }
+    if (e.which == 120) { // x
+        console.log("x")
+    }
+    if (e.which == 99) { // c
+        console.log("c")
+    }
+    if (e.which == 118) { // v
+        console.log("v")
+    }
+    if (e.which == 98) { // b
+        console.log("b")
+    }
+    if (e.which == 110) { // n
+        console.log("n")
+    }
+    if (e.which == 109) { // m
+        console.log("m")
+    }
+    if (e.which == 44) { // ,
+        console.log(",")
+    }
+    if (e.which == 46) { // .
+        console.log(".")
+    }
+    if (e.which == 47) { // /
+        console.log("/")
+    }
+
+    // space bar
+    if (e.which == 32) { // space bar
+        console.log("space bar")
+    }
 });
 
 
