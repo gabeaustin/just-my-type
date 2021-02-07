@@ -5,18 +5,23 @@ $(document).ready(function () {
         'oat itain oat tain nate eate tea anne inant nean', 
         'itant eate anot eat nato inate eat anot tain eat', 
         'nee ene ate ite tent tiet ent ine ene ete ene ate'];
-
-    // console.log(sentencesArray[1]);
-    //create global sentenceCounter that starts at 0
-    //same for letterCounter
     let sentenceCounter = 0;
     let letterCounter = 0;
     let currentSentence = sentencesArray[sentenceCounter];
     let currentLetter = currentSentence[letterCounter];
+
+    console.log(sentencesArray[sentenceCounter][letterCounter]);
+    // console.log(sentencesArray[1]);
+    //create global sentenceCounter that starts at 0
+    //same for letterCounter
     
-    console.log("before keydown: " + currentLetter );
+    console.log("before keydown: " + currentLetter);
 
     $("#keyboard-upper-container").hide();
+    
+    $(document).keypress(function(e) {
+        $(`#${e.keyCode}`).css("background-color", "yellow");
+    });
     
     $(document).keydown(function(e) {
         if (e.keyCode == 16) {
@@ -38,9 +43,6 @@ $(document).ready(function () {
             // console.log(("#keyboard-lower-container").val());
         });
 
-    $(document).keypress(function(e) {
-        $(`#${e.keyCode}`).css("background-color", "yellow");
-    });
     
     //check if e.keyCode matches the current letter in the current sentence
     //(array indexes)
