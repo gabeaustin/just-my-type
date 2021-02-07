@@ -10,6 +10,8 @@ $(document).ready(function () {
     let currentSentence = sentencesArray[sentenceCounter];
     let currentLetter = currentSentence[letterCounter];
 
+    $("#feedback").html("<div> " + sentencesArray +" </div>");
+ 
     // this is the array to move through the letters in the sentence array
     console.log(sentencesArray[sentenceCounter][letterCounter]);
     // console.log(sentencesArray[1]);
