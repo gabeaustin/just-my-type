@@ -16,69 +16,46 @@ $(document).ready(function () {
     
     console.log("before keydown: " + currentLetter );
 
-    $("#keyboard-upper-container").hide();    
+    $("#keyboard-upper-container").hide();
     
-    
-    if(currentSentence.charCodeAt(99) === e.keyCode) {
-        console.log("working?");
-        
-        letterCounter++;
-        currentLetter; /* ??? */
-  /*      
-    }
-        $("#target-letter").empty();
-        $("#target-letter").append(currentLetter);
-        $("#feedback").append("hi");
-        
-        if (currentLetter === " ") {
-            $("#target-letter").append("Space");
-            $("#feedback").append("hi2");
-        } else {
-            $("#target-letter").append(currentSentence);
+    $(document).keydown(function(e) {
+        if (e.keyCode == 16) {
+            $("#keyboard-lower-container").hide();
+            $("#keyboard-upper-container").show();
         }
-        
-    }
+    })
+
+    $(document).keyup(function (e) {
+        if (e.keyCode == 16) {
+            $("#keyboard-lower-container").show();
+            $("#keyboard-upper-container").hide();
+        }
+
+            let asciiLetter = e.key.charCodeAt(0); // this catches both lower & uppercase letters
+            console.log("This is Ascii letter after key up: " + asciiLetter);
+            $(`#${asciiLetter}`).css("background-color", "#f5f5f5");
     
-    console.log(letterCounter);
-    
-    console.log("after keydown: " + currentLetter);
+            // console.log(("#keyboard-lower-container").val());
+        });
+
+    $(document).keypress(function(e) {
+        $(`#${e.keyCode}`).css("background-color", "yellow");
+    });
     
     //check if e.keyCode matches the current letter in the current sentence
     //(array indexes)
     //increment letterCounter up every time this is the case
-// })
-/*
-$(document).keydown(function(e) {
-    if (e.keyCode == 16) {
-        $("#keyboard-lower-container").hide();
-        $("#keyboard-upper-container").show();
-    }
-*/
-
-/*
-$(document).keyup(function (e) {
-    if (e.keyCode == 16) {
-        $("#keyboard-lower-container").show();
-        $("#keyboard-upper-container").hide();
-        }
-
-        let asciiLetter = e.key.charCodeAt(0); // this catches both lower & uppercase letters
-        console.log("This is Ascii letter after key up: " + asciiLetter);
-        $(`#${asciiLetter}`).css("background-color", "#f5f5f5");
-
-
-        // console.log(("#keyboard-lower-container").value());
-    });
-*/
-/*   
-    $(document).keypress(function(e) {
-        $(`#${e.keyCode}`).css("background-color", "yellow");
-    });
-*/
-
-    // $(document).show(function(e) {
-    //     $("#sentencesArray");
-    // });
-});
+    
+    // if(currentSentence.charCodeAt(99) === e.keyCode) {
+    //     console.log("working?");
+        
+    //     letterCounter++;
+    //     currentLetter; /* ??? */
+      
+    // }
+    
+    console.log("after keydown: " + currentLetter);
+    
+})
 
 
