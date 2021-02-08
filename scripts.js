@@ -10,27 +10,20 @@ $(document).ready(function () {
     let currentSentence = sentencesArray[sentenceCounter];
     let currentLetter = currentSentence[letterCounter];
 
-    $("#sentence").html("<div> " + currentSentence[0] + " </div>");
+    $("#sentence").html(`<div>${currentSentence}</div>`);
 
+    // THE LINE BELOW NEEDS WORK
     if (currentSentence >= 10) {
         $("#sentence").html("<div> " + currentSentence[1] + " </div>");
     }
  
     // this is the array to move through the letters in the sentence array
-    // console.log(sentencesArray[sentenceCounter][letterCounter]);
-
+    console.log(sentencesArray[sentenceCounter][letterCounter]); // for testing
     $("#keyboard-upper-container").hide();
     
     // this highlights the key that user is pressing
     $(document).keypress(function(e) {
         $(`#${e.keyCode}`).css("background-color", "yellow");
-
-        // let sentenceOneByOne = sentencesArray[sentenceCounter];
-        // let sentenceOneByOneLength = sentenceOneByOne.length;
-
-        // if (sentenceOneByOneLength === 11) {
-        //     console.log("hello");
-        // }
     });
     
     // this hides the lowercase keyboard when the user presses the shift key 
@@ -39,16 +32,18 @@ $(document).ready(function () {
             $("#keyboard-lower-container").hide();
             $("#keyboard-upper-container").show();
         }
-
-        // the letter counter is increased each time a user presses a key
+        
+        // the letterCounter is increased each time a user presses a key
         letterCounter++;
         // this will check to see what letter the user is on - comparing the ascii key number to the actual character
         currentLetter = currentSentence[letterCounter];
+        console.log(currentLetter); // for testing
 
-        if (currentSentence.charCodeAt(currentLetter) === e.keyCode) {
-            console.log("working");
-        }
-        // console.log(e.key); // for testing
+        // if (currentSentence.charAt(currentLetter) == e.keyCode) {
+        //     console.log(currentSentence).text();
+        // } else {
+        //     console.log(currentSentence);
+        // }
     })
 
     $(document).keyup(function (e) {
