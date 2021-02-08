@@ -10,20 +10,27 @@ $(document).ready(function () {
     let currentSentence = sentencesArray[sentenceCounter];
     let currentLetter = currentSentence[letterCounter];
 
-    $("#feedback").html("<div> " + sentencesArray +" </div>");
+    $("#sentence").html("<div> " + currentSentence[0] + " </div>");
+
+    if (currentSentence >= 10) {
+        $("#sentence").html("<div> " + currentSentence[1] + " </div>");
+    }
  
     // this is the array to move through the letters in the sentence array
-    console.log(sentencesArray[sentenceCounter][letterCounter]);
-    // console.log(sentencesArray[1]);
-    
-    // this will display the current letter key BEFORE any key is typed
-    console.log("before keydown: " + currentLetter); // for testing
+    // console.log(sentencesArray[sentenceCounter][letterCounter]);
 
     $("#keyboard-upper-container").hide();
     
     // this highlights the key that user is pressing
     $(document).keypress(function(e) {
         $(`#${e.keyCode}`).css("background-color", "yellow");
+
+        // let sentenceOneByOne = sentencesArray[sentenceCounter];
+        // let sentenceOneByOneLength = sentenceOneByOne.length;
+
+        // if (sentenceOneByOneLength === 11) {
+        //     console.log("hello");
+        // }
     });
     
     // this hides the lowercase keyboard when the user presses the shift key 
@@ -37,8 +44,11 @@ $(document).ready(function () {
         letterCounter++;
         // this will check to see what letter the user is on - comparing the ascii key number to the actual character
         currentLetter = currentSentence[letterCounter];
-        console.log(e.key); // for testing
-        console.log("after keydown: " + currentLetter); // for testing
+
+        if (currentSentence.charCodeAt(currentLetter) === e.keyCode) {
+            console.log("working");
+        }
+        // console.log(e.key); // for testing
     })
 
     $(document).keyup(function (e) {
@@ -49,26 +59,14 @@ $(document).ready(function () {
         }
 
             let asciiLetter = e.key.charCodeAt(0); // this catches both lower & uppercase letters
-            // console.log("This is Ascii letter after key up: " + asciiLetter); // for testing
             $(`#${asciiLetter}`).css("background-color", "#f5f5f5");
     
-            // console.log(("#keyboard-lower-container").val());
         });
 
     
     //check if e.keyCode matches the current letter in the current sentence
     //(array indexes)
     //increment letterCounter up every time this is the case
-    
-    // if(currentSentence.charCodeAt(99) === e.keyCode) {
-    //     console.log("working?");
-        
-    //     letterCounter++;
-    //     currentLetter; /* ??? */
-      
-    // }
-    
-    
     
 })
 
